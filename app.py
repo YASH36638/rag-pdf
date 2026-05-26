@@ -1,16 +1,17 @@
 import os
 from dotenv import load_dotenv
 load_dotenv()
+import os
+from dotenv import load_dotenv
 
 import gradio as gr
 
 from langchain_community.document_loaders import PyPDFLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain_google_genai import ChatGoogleGenerativeAI
-
 # Global vectorstore
 vectorstore = None
 
